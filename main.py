@@ -1,5 +1,5 @@
 from typing import Union
-from routers import admin, company, login, users, contacts
+from routers import company, login, users, contacts
 from fastapi import FastAPI, Depends
 from db_read import database_instance_read
 from db_write import database_instance_write
@@ -34,7 +34,7 @@ app = FastAPI(lifespan=db_pool_lifespan)
 # app.include_router(users.router)
 app.include_router(contacts.router)
 app.include_router(company.router)
-app.include_router(admin.router)
+# app.include_router(admin.router)
 app.include_router(login.router)
 
 @app.get("/")

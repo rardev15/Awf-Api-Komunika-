@@ -24,9 +24,9 @@ class AdminRepository(Repository):
       result = await self._db_write.execute(query, [data.admin_name, hash.decode('utf-8'), data.admin_worker, data.admin_rank])
       return result
 
-    async def login(self, data:Login)->Login|None:
+    async def login(self, data:Admin)->Admin|None:
       query = """SELECT * FROM admin WHERE admin_name = $1"""
       result = await self._db_read.fetch_rows(query, [data.admin_name])
       if(len(result) > 0):
-         return [dict(record) for record in result]
+         return dict(result[0])
       return None

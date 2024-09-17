@@ -1,0 +1,2 @@
+JWT_SECRET = "asdasdasdas"
+JWT_ALGORITHM = "HS256"
