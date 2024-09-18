@@ -1,8 +1,8 @@
 import asyncpg
-from env.db_env import db_env
+from envs.db_env import db_env
 
 class Database():
-    
+
     def __init__(self):
         self.user = db_env.database_username
         self.password = db_env.database_password
@@ -13,10 +13,10 @@ class Database():
 
         self._connection_pool = None
         self.con = None
-        
+
         print("Database initialized")
         print(self)
-        
+
     def __call__(self):
         print(self)
         return self

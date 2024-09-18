@@ -1,7 +1,7 @@
 from typing import List
 import asyncpg
 from db import Database
-from env.db_env import db_env
+from envs.db_env import db_env
 
 class DatabaseRead():
 

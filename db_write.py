@@ -1,6 +1,6 @@
 from multiprocessing.pool import Pool
 import asyncpg
-from env.db_env import db_env
+from envs.db_env import db_env
 
 class DatabaseWrite():
 
